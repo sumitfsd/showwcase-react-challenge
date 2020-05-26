@@ -4,8 +4,8 @@ import * as dimensions from './dimensions'
 const scalarSizingUnit = 1
 
 const theme = {
-  main: '#1050a2',
-  mainDark: '#003f8f',
+  main: '#1873e8',
+  mainDark: '#00459e',
   grey: '#f1f2f3',
   greyDark: '#7b7b7b',
   black: '#000',
