@@ -1,7 +1,7 @@
-import { call } from "redux-saga/effects";
+import { call } from 'redux-saga/effects';
 
 function* mySaga() {
-  yield call(console.log, "Saga");
+  yield call(console.log, 'Saga');
 }
 
 export default mySaga;

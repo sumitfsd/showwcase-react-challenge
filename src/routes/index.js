@@ -6,7 +6,7 @@ import { ROUTES } from '../constant';
 const routes = (
   <Switch>
     <Route path={ROUTES.HOMEPAGE} exact component={Homepage} />
-    <Redirect from="/*" to={ROUTES.HOMEPAGE} />
+    <Redirect from='/*' to={ROUTES.HOMEPAGE} />
   </Switch>
 );
 
