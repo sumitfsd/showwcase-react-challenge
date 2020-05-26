@@ -48,7 +48,6 @@ export const IconWrapper = styled.div`
   align-items: center;
   margin: 0 ${theme.spacing(0.5)};
 
-
   svg {
     color: ${theme.white};
     height: 1.5rem;
