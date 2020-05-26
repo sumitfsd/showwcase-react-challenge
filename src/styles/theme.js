@@ -1,4 +1,5 @@
 import { darken, lighten } from 'polished'
+import * as dimensions from './dimensions'
 
 const scalarSizingUnit = 1
 
@@ -36,4 +37,5 @@ const theme = {
   inputPadding: '0.5rem' // sizingUnit / 2
 }
 
+export { dimensions }
 export default theme
