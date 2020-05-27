@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { MdLocationCity } from 'react-icons/md'
-import { ContentWrapper, Container, MidFrame, NameInput, StyledButton } from './Homepage.styled'
+import { ContentWrapper, Container, MidFrame, Input, StyledButton } from './Homepage.styled'
 import Navigation from '../../components/Navigation';
 import { ROUTES } from '../../constant';
 
@@ -28,7 +28,7 @@ function Homepage({ setUserName, history }) {
         <MidFrame>
           <p>Hi there! Welcome to your education showcase</p>
           <p>Type your name and click "Enter" below to begin!</p>
-          <NameInput
+          <Input
             value={name}
             onChange={(event) => setName(event.target.value)}
             placeholder={'Your Name'}

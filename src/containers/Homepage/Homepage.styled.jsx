@@ -34,7 +34,7 @@ export const StyledButton = styled(Button)`
   width: calc(${theme.sizingUnit} * 12);
   align-self: center;
 `
-export const NameInput =  styled.input`
+export const Input =  styled.input`
   height: ${theme.inputHeight};
   padding: calc(${theme.sizingUnit} * 0.1);
 `
