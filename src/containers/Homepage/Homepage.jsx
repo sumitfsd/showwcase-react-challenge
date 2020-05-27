@@ -20,13 +20,8 @@ function Homepage({ setUserName, userName, history }) {
       <ContentWrapper>
         <MidFrame>
         <p>Hi there! Welcome to your education showcase</p>
-        <br/>  
-        <br/>
-        <p>Type your name and click "Enter" below to begin!</p>
-        <br/>
+        <p>Type your name and click "Enter" below to begin!</p>        
         <NameInput/>
-        <br/>
-        <br/>
         <Button>Enter</Button>
         </MidFrame>
       </ContentWrapper>

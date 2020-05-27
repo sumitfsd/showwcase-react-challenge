@@ -13,23 +13,23 @@ export const Container = styled.div`
 `
 export const MidFrame = styled.div`
   background-color: ${theme.main};
-  margin: auto;
-  display: block;
-  position: fixed;
+  position: relative;
   width: 300px;
   height: 300px;
+  padding: 20px;
   top: 50%;
   left: 50%;
-  margin-top: -100px;
-  margin-left: -100px;
+  transform: translate(-50%,-50%);
   color: ${theme.white};
   border-radius: ${theme.borderRadius};
-  text-align: center;
+  text-align: center;  
 `
 
 export const Button = styled.button`
   background-color: ${theme.greyDark};
   text-align: center;
+  margin-top: 20px;
+  padding: 10px;
   width: 100px;
 `
 export const NameInput =  styled.input`
