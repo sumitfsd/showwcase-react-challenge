@@ -33,6 +33,7 @@ export const StyledButton = styled(Button)`
   margin-top: calc(${theme.sizingUnit} * 1.6);
   width: calc(${theme.sizingUnit} * 12);
   align-self: center;
+  background-color: ${theme.greyLight};
 `
 export const Input =  styled.input`
   height: ${theme.inputHeight};

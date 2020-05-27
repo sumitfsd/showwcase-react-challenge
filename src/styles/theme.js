@@ -13,6 +13,7 @@ const theme = {
   green: 'green',
   red: 'red',
   lightRed: lighten(0.15, 'red'),
+  greyLight: lighten(0.2, '#7b7b7b'),
 
   text: darken(0.2, '#1050a2'),
   success: 'green',
