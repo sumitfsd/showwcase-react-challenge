@@ -2,8 +2,9 @@ import { connect } from 'react-redux';
 import Homepage from './Homepage'
 import { setName } from './reducer'
 
-const mapStateToProps = state => ({
-  userName: state.user.name
+const mapStateToProps = ({ user }, { history }) => ({
+  userName: user.name,
+  history
 })
 
 const mapDispatchToProps = dispatch => ({
