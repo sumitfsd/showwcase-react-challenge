@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import theme from "../../styles/theme";
+import Button from '../../components/Button';
 
 export const ContentWrapper = styled.div`
   background-color: ${theme.grey};
@@ -22,15 +23,16 @@ export const MidFrame = styled.div`
   transform: translate(-50%,-50%);
   color: ${theme.white};
   border-radius: ${theme.borderRadius};
-  text-align: center;  
+  text-align: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column; 
 `
 
-export const Button = styled.button`
-  background-color: ${theme.greyDark};
-  text-align: center;  
+export const StyledButton = styled(Button)`
   margin-top: calc(${theme.sizingUnit} * 1.6);
-  padding: calc(${theme.sizingUnit} * 0.8);
   width: calc(${theme.sizingUnit} * 12);
+  align-self: center;
 `
 export const NameInput =  styled.input`
   height: ${theme.inputHeight};

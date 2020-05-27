@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { MdLocationCity } from 'react-icons/md'
-import { ContentWrapper, Container, MidFrame, Button, NameInput } from './Homepage.styled'
+import { ContentWrapper, Container, MidFrame, NameInput, StyledButton } from './Homepage.styled'
 import Navigation from '../../components/Navigation';
 import { ROUTES } from '../../constant';
 
@@ -26,16 +26,19 @@ function Homepage({ setUserName, history }) {
       />
       <ContentWrapper>
         <MidFrame>
-        <p>Hi there! Welcome to your education showcase</p>
-        <p>Type your name and click "Enter" below to begin!</p>        
-        <NameInput
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-          placeholder={'Your Name'} 
-        />
-        <Button
-         onClick={() => handleClick()}
-        >Enter</Button>
+          <p>Hi there! Welcome to your education showcase</p>
+          <p>Type your name and click "Enter" below to begin!</p>
+          <NameInput
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            placeholder={'Your Name'}
+          />
+          <StyledButton
+            onClick={() => handleClick()}
+            size='medium'
+          >
+            Enter
+          </StyledButton>
         </MidFrame>
       </ContentWrapper>
     </Container>
