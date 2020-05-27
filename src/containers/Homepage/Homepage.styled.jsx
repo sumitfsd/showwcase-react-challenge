@@ -14,8 +14,8 @@ export const Container = styled.div`
 export const MidFrame = styled.div`
   background-color: ${theme.main};
   position: relative;
-  width: 20rem;
-  height: 20rem;
+  width: calc(${theme.sizingUnit} * 20);
+  height: calc(${theme.sizingUnit} * 20);
   padding: calc(${theme.sizingUnit} * 2.5);
   top: 50%;
   left: 50%;
@@ -30,9 +30,9 @@ export const Button = styled.button`
   text-align: center;  
   margin-top: calc(${theme.sizingUnit} * 1.6);
   padding: calc(${theme.sizingUnit} * 0.8);
-  width: 12rem;
+  width: calc(${theme.sizingUnit} * 12);
 `
 export const NameInput =  styled.input`
   height: ${theme.inputHeight};
-  padding: 0.1rem;
+  padding: calc(${theme.sizingUnit} * 0.1);
 `
