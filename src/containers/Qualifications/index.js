@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Homepage from './Homepage'
+import Qualifications from './Qualifications'
 
 const mapStateToProps = ({ user }, { history }) => ({
   userName: user.name,
@@ -10,4 +10,4 @@ const mapStateToProps = ({ user }, { history }) => ({
 const mapDispatchToProps = dispatch => ({
 })
 
-export default connect(mapStateToProps, null)(Homepage);
+export default connect(mapStateToProps, null)(Qualifications);
