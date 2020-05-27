@@ -19,7 +19,7 @@ function Homepage({ userName, history }) {
       <ContentWrapper>
         <>{`Welcome ${userName}`}</>
         <button onClick={() => setShowModal(true)}>
-          Add Education
+          Add new education
           </button>
 
         <Modal
@@ -35,7 +35,7 @@ function Homepage({ userName, history }) {
               <Button
                 size='normal' onClick={() => {console.log("Submitting")
                 }}
-              >Update
+              >Add education
             </Button>
             </ModalFooterActionsWrapper>
           }
