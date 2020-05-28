@@ -6,6 +6,7 @@ const scalarSizingUnit = 1
 const theme = {
   main: '#1873e8',
   mainDark: '#00459e',
+  mainLight: lighten(0.35, '#1873e8'),
   grey: '#f1f2f3',
   greyDark: '#7b7b7b',
   black: '#000',
@@ -28,9 +29,6 @@ const theme = {
   backgroundLighten: 'rgba(255, 255, 255, 0.15)',
 
   spinnerHeight: '20px',
-
-  agGridFontSize: '12px',
-  agGridBackground: '#f5f7f7',
 
   verticalUnit: '0.75rem', // sizingUnit * 0.75
   inputHeight: '2rem', // sizingUnit * 2
