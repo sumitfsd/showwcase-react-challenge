@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { getRequest } from '../../helpers/api';
 import {FETCH_UNIVERSITY_URL} from '../../constant'
 import { getUniversities, successInGettingUniversities, errorInGettingUniversities } from './reducer';
@@ -13,7 +13,7 @@ function* fetchUniversities(action) {
 }
 
 function* fetchUniversitiesSaga() {
-  yield takeEvery(getUniversities.type, fetchUniversities);
+  yield takeLatest(getUniversities.type, fetchUniversities);
 }
 
 export default fetchUniversitiesSaga;
