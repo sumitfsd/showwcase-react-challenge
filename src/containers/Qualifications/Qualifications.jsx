@@ -1,12 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useReducer } from 'react';
 import PropTypes from 'prop-types';
 import Navigation from '../../components/Navigation';
 import Button from '../../components/Button';
 import Modal from '../../components/Modal';
-import { ContentWrapper, Container,ModalFooterActionsWrapper, CancelButton } from './Qualifications.styled'
+import { ContentWrapper, Container, ModalFooterActionsWrapper, CancelButton } from './Qualifications.styled'
+import QualificationForm from '../../components/QualificationForm';
+import { initialState, reducer } from '../../components/QualificationForm/reducer'
 
-function Homepage({ userName, history }) {
-  const [showModal, setShowModal] = useState(false);
+function Homepage({ userName, history, addQualification }) {
+  const [showModal, setShowModal] = useState(true);
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  const handleSave = () => {
+    addQualification(state)
+    setShowModal(false)
+    dispatch({ type: 'reset', data: initialState })
+  }
+
+  const handleCancel = () => {
+    setShowModal(false)
+    dispatch({ type: 'reset', data: initialState })
+  }
 
   return (
     <Container>
@@ -31,17 +45,20 @@ function Homepage({ userName, history }) {
           }}
           footer={
             <ModalFooterActionsWrapper>
-              <CancelButton size='medium' onClick={() => setShowModal(false)}>Cancel</CancelButton>
+              <CancelButton size='medium' onClick={() => handleCancel()}>Cancel</CancelButton>
               <Button
-                size='normal' onClick={() => {console.log("Submitting")
-                }}
-              >Add education
-            </Button>
+                onClick={() => handleSave()}
+              >
+                Save
+              </Button>
             </ModalFooterActionsWrapper>
           }
         >
-          Content
-      </Modal>
+          <QualificationForm
+            formValues={state}
+            handleChange={dispatch}
+          />
+        </Modal>
       </ContentWrapper>
     </Container>
   )

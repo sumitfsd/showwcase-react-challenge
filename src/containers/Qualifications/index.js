@@ -1,13 +1,17 @@
 import { connect } from 'react-redux';
 import Qualifications from './Qualifications'
+import { addQualification } from './reducer'
 
-const mapStateToProps = ({ user }, { history }) => ({
+const mapStateToProps = ({ user, universities }, { history }) => ({
   userName: user.name,
-  history
+  universities:universities.list,
+  loading:universities.isLoading,
+  history,
 })
 
 
-const mapDispatchToProps = dispatch => ({
-})
+const mapDispatchToProps = {
+  addQualification
+}
 
-export default connect(mapStateToProps, null)(Qualifications);
+export default connect(mapStateToProps, mapDispatchToProps)(Qualifications);
