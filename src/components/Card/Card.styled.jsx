@@ -13,8 +13,7 @@ export const CardWrapper = styled.div`
   min-width: calc(${theme.sizingUnit} * 25);
 
   &:hover {
-    box-shadow: 0 calc(${theme.sizingUnit} * 0.5) calc(${theme.sizingUnit} * 1) ${theme.greyDark}, 0 calc(${theme.sizingUnit} * 0.6) calc(${theme.sizingUnit} * 0.6) ${theme.greyDark};
-    margin-bottom: calc(${theme.sizingUnit} * 2.4);
+    margin-bottom: calc(${theme.sizingUnit} * 1.4);
   }
 `
 

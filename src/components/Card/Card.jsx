@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { CardWrapper, CardTitle, CardContext, Overlay, Text, OverlayContentWrapper } from './Card.styled';
 import { ROUTES } from '../../constant';
 
 const Card = ({
-  isSelected, schoolName, degree, fieldOfStudy, grade, description, startYear, endYear, id, history
+  isSelected, schoolName, degree, fieldOfStudy, grade, description, startYear, endYear, id, history, ref
 }) => {
-
+  const textInput = useRef(null);
+  if(textInput && textInput.current && textInput.current.offsetTop && isSelected){
+    window.scrollTo(0, textInput.current.offsetTop)
+  }
   return (
-    <CardWrapper>
+    <CardWrapper ref={textInput}>
       <CardTitle onClick={() => history.push(`${ROUTES.QUALIFICATIONS}/${id}`)} isSelected={isSelected}>
         {schoolName}
       </CardTitle>
