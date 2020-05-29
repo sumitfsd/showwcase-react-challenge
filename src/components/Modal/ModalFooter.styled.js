@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import theme from 'theme';
+import theme from '../../styles/theme';
 
 export const ModalFooterActionsWrapper = styled.div`
   display: flex;

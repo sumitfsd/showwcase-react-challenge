@@ -80,6 +80,17 @@ const QualificationForm = ({ formValues, handleChange }) => {
   );
 };
 
-QualificationForm.propTypes = {};
+QualificationForm.propTypes = {
+  formValues: PropTypes.shape({
+    schoolName: PropTypes.string,
+    degree: PropTypes.string,
+    fieldOfStudy: PropTypes.string,
+    grade: PropTypes.string,
+    description: PropTypes.string,
+    startYear: PropTypes.string,
+    endYear: PropTypes.string,
+  }),
+  handleChange: PropTypes.func.isRequired,
+};
 
 export default QualificationForm;

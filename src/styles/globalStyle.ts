@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
-import theme from './theme'
+import { createGlobalStyle } from 'styled-components';
+import theme from './theme';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -84,5 +84,5 @@ const GlobalStyle = createGlobalStyle`
       border: none;
     }
   }
-`
-export default GlobalStyle
+`;
+export default GlobalStyle;

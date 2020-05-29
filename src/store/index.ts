@@ -6,5 +6,7 @@ const store = configureStore({
   reducer,
   middleware: [sagaMiddleware],
 });
-startSaga()
+
+startSaga();
+
 export default store;

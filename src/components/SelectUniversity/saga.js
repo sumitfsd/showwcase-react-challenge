@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { getRequest } from '../../helpers/api';
+import getRequest from '../../helpers/api';
 import { FETCH_UNIVERSITY_URL } from '../../constant';
 import {
   getUniversities,

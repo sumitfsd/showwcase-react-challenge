@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import QualificationForm from './QualificationForm';
 
-const mapStateToProps = ({ universities }, { history }) => ({
+const mapStateToProps = ({ universities }) => ({
   universities: universities.list,
   loading: universities.isLoading,
 });

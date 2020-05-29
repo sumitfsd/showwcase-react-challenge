@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import theme from "../../styles/theme";
+import styled from 'styled-components';
+import theme from '../../styles/theme';
 
 export const ModalFooterActionsWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
-`
+`;
 
 export const CancelButton = styled.button`
   background: ${theme.greyDark};
@@ -24,7 +24,7 @@ export const CancelButton = styled.button`
   padding: calc(${theme.sizingUnit} * 0.45) calc(${theme.sizingUnit} * 1.2);
   font-size: ${theme.spacing(1)};
   margin-right: ${theme.spacing()};
-`
+`;
 
 export const WelcomeMessage = styled.div`
   width: 100%;
@@ -33,4 +33,4 @@ export const WelcomeMessage = styled.div`
   font-weight: 500;
   display: flex;
   justify-content: center;
-`
+`;

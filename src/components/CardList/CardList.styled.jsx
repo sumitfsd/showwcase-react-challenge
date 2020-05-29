@@ -1,16 +1,16 @@
-import styled from "styled-components";
-import theme from "../../styles/theme";
+import styled from 'styled-components';
+import theme from '../../styles/theme';
 
 export const ListWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-`
+`;
 
 export const CardTitle = styled.div`
   height: 3rem;
   background: blue;
-`
+`;
 
 export const CardContext = styled.div`
   display: flex;
@@ -20,4 +20,4 @@ export const CardContext = styled.div`
   color: ${theme.white};
   padding-left: 2rem;
   padding-top: 1rem;
-`
+`;

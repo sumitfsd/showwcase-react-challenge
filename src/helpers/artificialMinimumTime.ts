@@ -1,5 +1,5 @@
-export default function artificialMinimumTime (action, time, minimumRunTime) {
-  return function (...args) {
+export default function artificialMinimumTime(action: Function, time: number, minimumRunTime: number) {
+  return function (...args: object[]) {
     const elapsed = Date.now() - time
 
     if (elapsed > minimumRunTime) {

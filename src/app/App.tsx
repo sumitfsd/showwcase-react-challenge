@@ -4,9 +4,5 @@ import history from './history';
 import routes from '../routes';
 
 export default function App() {
-  return (
-    <Router history={history}>
-        {routes}
-    </Router>
-  );
+  return <Router history={history}>{routes}</Router>;
 }

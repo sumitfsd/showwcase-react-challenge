@@ -10,14 +10,14 @@ import {
 } from './Homepage.styled';
 import Navigation from '../../components/Navigation';
 import { ROUTES } from '../../constant';
-import { validateName } from './ValidateName';
+import validate from './ValidateName';
 import Toast from '../../components/Toast';
 
 function Homepage({ setUserName, history, isCollapsed }) {
   const [name, setName] = useState('');
 
   const handleClick = () => {
-    const errors = validateName(name);
+    const errors = validate(name);
     if (errors.length) {
       Toast.fire({
         title: errors[0],
@@ -66,7 +66,9 @@ function Homepage({ setUserName, history, isCollapsed }) {
 }
 
 Homepage.propTypes = {
-  setUserName: PropTypes.func.isRequired,
+  setUserName: PropTypes.func,
+  history: PropTypes.object,
+  isCollapsed: PropTypes.bool,
 };
 
 export default Homepage;

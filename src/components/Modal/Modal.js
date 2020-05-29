@@ -38,15 +38,15 @@ const Modal = ({
             {header.action?.component
               ? header.action.component
               : Boolean(header.action) && (
-              <Button
-                    variant={header.action.variant}
-                    size="medium"
-                    shouldBeLoading={header.action.loading}
-                    onClick={() => header.action.onClick()}
-                  >
-                    {header.action.title}
-                  </Button>
-                )}
+                <Button
+                  variant={header.action.variant}
+                  size="medium"
+                  shouldBeLoading={header.action.loading}
+                  onClick={() => header.action.onClick()}
+                >
+                  {header.action.title}
+                </Button>
+              )}
 
             <CloseButton onClick={() => onRequestClose()}>
               <AiFillCloseCircle />
