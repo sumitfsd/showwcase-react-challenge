@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const configSlice = createSlice({
   name: 'universities',
@@ -18,13 +18,17 @@ const configSlice = createSlice({
     errorInGettingUniversities(state, action) {
       state.error = action.payload;
       state.loading = false;
-    }
-  }
-})
+    },
+  },
+});
 
 // Extract the action creators object and the reducer
 const { actions, reducer } = configSlice;
 // Extract and export each action creator by name
-export const { getUniversities, successInGettingUniversities, errorInGettingUniversities } = actions;
+export const {
+  getUniversities,
+  successInGettingUniversities,
+  errorInGettingUniversities,
+} = actions;
 // Export the reducer, either as a default or named export
 export default reducer;

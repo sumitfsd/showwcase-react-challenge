@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const configSlice = createSlice({
   name: 'user',
@@ -9,13 +9,11 @@ const configSlice = createSlice({
     setName(state, action) {
       state.name = action.payload;
     },
-  }
-})
+  },
+});
 
 const { actions, reducer } = configSlice;
 
-export const {
-  setName
-} = actions;
+export const { setName } = actions;
 
 export default reducer;

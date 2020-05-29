@@ -1,13 +1,13 @@
-import styled from 'styled-components/macro'
-import theme from '../../styles/theme'
-import SelectUniversity from '../SelectUniversity'
+import styled from 'styled-components/macro';
+import theme from '../../styles/theme';
+import SelectUniversity from '../SelectUniversity';
 
 export const NameWrapper = styled.div`
   display: flex;
   font-weight: 500;
   color: ${theme.mainDark};
   flex-direction: column;
-`
+`;
 
 export const Input = styled.input`
   height: calc(${theme.sizingUnit} * 2) !important;
@@ -21,14 +21,14 @@ export const Input = styled.input`
   &:hover {
     border: 1px solid ${theme.greyDark} !important;
   }
-`
+`;
 
 export const Select = styled(SelectUniversity)`
   border: 1px solid ${theme.grey} !important;
   &:focus {
     border: 1px solid ${theme.main} !important;
   }
-`
+`;
 
 export const TextArea = styled.textarea`
   padding: 0 calc(${theme.sizingUnit} * 0.5) !important;
@@ -42,11 +42,11 @@ export const TextArea = styled.textarea`
   &:focus {
     border: 1px solid ${theme.main} !important;
   }
-`
+`;
 
 export const FormWrapper = styled.div`
-  margin: ${theme.sizingUnit}
-`
+  margin: ${theme.sizingUnit};
+`;
 
 export const CustomStyle = {
   container: (provided) => ({
@@ -65,7 +65,6 @@ export const CustomStyle = {
     ...provided,
     height: '30px',
     marginTop: '-20px',
-
   }),
   dropdownIndicator: (provided) => ({
     ...provided,
@@ -83,7 +82,11 @@ export const CustomStyle = {
   option: (styles, { data, isDisabled, isFocused, isSelected }) => {
     return {
       ...styles,
-      backgroundColor: isDisabled ? 'red' : (isFocused ? theme.mainLight : theme.white),
+      backgroundColor: isDisabled
+        ? 'red'
+        : isFocused
+        ? theme.mainLight
+        : theme.white,
       color: theme.text,
       cursor: isDisabled ? 'not-allowed' : 'default',
     };

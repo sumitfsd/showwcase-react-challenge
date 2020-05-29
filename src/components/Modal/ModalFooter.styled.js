@@ -1,11 +1,11 @@
-import styled from 'styled-components/macro'
-import theme from 'theme'
+import styled from 'styled-components/macro';
+import theme from 'theme';
 
 export const ModalFooterActionsWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
-  `
+`;
 export const CancelButton = styled.button`
   background: ${theme.greyDark};
   border-radius: calc(${theme.sizingUnit} * 0.25);
@@ -23,4 +23,4 @@ export const CancelButton = styled.button`
   padding: calc(${theme.sizingUnit} * 0.45) calc(${theme.sizingUnit} * 1.2);
   font-size: ${theme.spacing(1)};
   margin-right: ${theme.spacing()};
-`
+`;
