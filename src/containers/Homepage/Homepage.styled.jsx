@@ -3,7 +3,7 @@ import theme from "../../styles/theme";
 import Button from '../../components/Button';
 
 export const ContentWrapper = styled.div`
-  background-color: ${theme.grey};
+  background-color: ${theme.white};
   flex: 0.9;
 `
 

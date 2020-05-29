@@ -30,7 +30,7 @@ function Homepage({ setUserName, history }) {
           <p>Type your name and click "Enter" below to begin!</p>
           <Input
             value={name}
-            onChange={(event) => {setName(event.target.value);console.log(event.target.value)}}
+            onChange={(event) => {setName(event.target.value)}}
             placeholder={'Your Name'}
           />
           <StyledButton
