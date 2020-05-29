@@ -8,6 +8,7 @@ const routes = (
   <Switch>
     <Route path={ROUTES.HOMEPAGE} exact component={Homepage} />
     <Route path={ROUTES.QUALIFICATIONS} exact component={Qualifications} />
+    <Route path={`${ROUTES.QUALIFICATIONS}/:qualificationId`} exact component={Qualifications} />
     <Redirect from='/*' to={ROUTES.HOMEPAGE} />
   </Switch>
 );
