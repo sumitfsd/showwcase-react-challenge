@@ -12,7 +12,7 @@ const configSlice = createSlice({
       state.loading = true;
     },
     successInGettingUniversities(state, action) {
-      state.list = action.payload.data;
+      state.list = action.payload;
       state.loading = false;
     },
     errorInGettingUniversities(state, action) {

@@ -13,9 +13,9 @@ function* fetchUniversities(action) {
       getRequest,
       `${FETCH_UNIVERSITY_URL}${action.payload}`
     );
-    yield put({ type: successInGettingUniversities.type, payload: { data } });
+    yield put(successInGettingUniversities(data));
   } catch (e) {
-    yield put({ type: errorInGettingUniversities.type, payload: e.message });
+    yield put(errorInGettingUniversities(e.message));
   }
 }
 
