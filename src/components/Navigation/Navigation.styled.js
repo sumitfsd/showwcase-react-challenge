@@ -9,8 +9,10 @@ const easeOutExponential = 'cubic-bezier(.19,1,.22,1)'
 export const NavigationWrapper = styled.div`
   background-color: ${theme.main};
   transition: width ${toggleSpeed} ${easeOutExponential};
-  flex: 0.1;
-  max-width: 12rem;
+  position: fixed;
+  height: 100%;
+  max-width: ${props => props.isCollapse ? '3rem' : `calc(${theme.sizingUnit} * 12)`};
+  min-width:'3rem' ;
 `
 
 export const Content = styled.div`
@@ -75,6 +77,8 @@ export const Links = styled.div`
   display: flex;
   flex-direction: column;
   transition: margin ${toggleSpeed} ${easeOutExponential};
+  height: calc(100vh - 112px);
+  overflow: auto;
 `
 
 const link = css`
@@ -87,7 +91,7 @@ const link = css`
   transition: background-color 0.1s ease-in-out;
   position: relative;
   justify-content: ${({ isCollapsed }) =>
-    isCollapsed ? '': 'center'};
+    isCollapsed ? '' : 'center'};
 
   &:hover {
     background-color: rgba(255,255,255,0.15);

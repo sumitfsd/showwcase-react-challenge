@@ -4,7 +4,9 @@ import Button from '../../components/Button';
 
 export const ContentWrapper = styled.div`
   background-color: ${theme.white};
-  flex: 0.9;
+  margin-left: ${props => props.isCollapsed ? `calc(${theme.sizingUnit} * 3)` : `calc(${theme.sizingUnit} * 12)`};
+  float: left;
+  width: 100%;
 `
 
 export const Container = styled.div`
@@ -35,7 +37,7 @@ export const StyledButton = styled(Button)`
   align-self: center;
   background-color: ${theme.greyLight};
 `
-export const Input =  styled.input`
+export const Input = styled.input`
   height: ${theme.inputHeight};
   padding: calc(${theme.sizingUnit} * 0.1);
 `

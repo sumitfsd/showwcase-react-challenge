@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import Homepage from './Homepage'
 import { setName } from './reducer'
 
-const mapStateToProps = ({ user }, { history }) => ({
+const mapStateToProps = ({ user, navigation }, { history }) => ({
   userName: user.name,
-  history
+  history,
+  isCollapsed: navigation.isCollapsed
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useEffect } from 'react';
+import React, { useState, useReducer } from 'react';
 import PropTypes from 'prop-types';
 import Navigation from '../../components/Navigation';
 import Button from '../../components/Button';
@@ -6,14 +6,30 @@ import Modal from '../../components/Modal';
 import QualificationForm from '../../components/QualificationForm';
 import { initialState, reducer } from '../../components/QualificationForm/reducer'
 import CardList from '../../components/CardList';
-import { ContentWrapper, Container, ModalFooterActionsWrapper, CancelButton, WelcomeMessage } from './Qualifications.styled'
+import { ContentWrapper, Container } from '../Homepage/Homepage.styled'
 import { ROUTES } from '../../constant';
+import { ModalFooterActionsWrapper, CancelButton, WelcomeMessage } from './Qualifications.styled'
+import Toast from '../../components/Toast';
+import { validate } from './QualificationValidator';
 
-function Homepage({ userName, history, addQualification, qualifications, qualificationId }) {
+function Homepage({ userName, history, addQualification, qualifications, qualificationId, isCollapsed }) {
   const [showModal, setShowModal] = useState(false);
   const [state, dispatch] = useReducer(reducer, initialState)
+  const requiredField = ['schoolName', 'degree', 'startYear', 'endYear']
 
   const handleSave = () => {
+    const errors = validate(state, requiredField)
+    if (errors.length) {
+      Toast.fire({
+        title: errors[0],
+        icon: 'error',
+      })
+      return
+    }
+    Toast.fire({
+      title: `Qualification at ${state.schoolName} is saved`,
+      icon: 'success'
+    })
     addQualification(state)
     setShowModal(false)
     dispatch({ type: 'reset', data: initialState })
@@ -26,6 +42,7 @@ function Homepage({ userName, history, addQualification, qualifications, qualifi
   return (
     <Container>
       <Navigation
+        isCollapsed={isCollapsed}
         history={history}
         links={
           qualifications.map((data, index) => ({
@@ -34,7 +51,7 @@ function Homepage({ userName, history, addQualification, qualifications, qualifi
           }))
         }
       />
-      <ContentWrapper>
+      <ContentWrapper isCollapsed={isCollapsed}>
         <WelcomeMessage>{`Welcome to ${userName}'s education page`}</WelcomeMessage>
         <WelcomeMessage>
           <Button onClick={() => setShowModal(true)} size='medium'>

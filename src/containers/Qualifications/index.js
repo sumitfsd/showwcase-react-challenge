@@ -2,13 +2,14 @@ import { connect } from 'react-redux';
 import Qualifications from './Qualifications'
 import { addQualification } from './reducer'
 
-const mapStateToProps = ({ user, universities, qualifications }, { match: { params: { qualificationId } }, history }) => ({
+const mapStateToProps = ({ user, universities, qualifications, navigation }, { match: { params: { qualificationId } }, history }) => ({
   userName: user.name,
   universities: universities.list,
   loading: universities.isLoading,
   history,
   qualifications: qualifications.list,
-  qualificationId
+  qualificationId,
+  isCollapsed: navigation.isCollapsed
 })
 
 

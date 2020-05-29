@@ -6,15 +6,15 @@ const QualificationForm = ({ formValues, handleChange }) => {
   return (
     <FormWrapper>
       <NameWrapper>
-        Name of school
+        Name of school *
         <Select styles={CustomStyle} onChange={(value) => handleChange({ type: 'schoolName', data: value })} />
       </NameWrapper>
       <NameWrapper>
-        Degree
+        Degree *
         <Input type='text' value={formValues.degree} placeholder='Enter degree' onChange={(event) => handleChange({ type: 'degree', data: event.target.value })} />
       </NameWrapper>
       <NameWrapper>
-        Field of Study
+        Field of Study *
         <Input type='text' value={formValues.fieldOfStudy} onChange={(event) => handleChange({ type: 'fieldOfStudy', data: event.target.value })} />
       </NameWrapper>
       <NameWrapper>
@@ -22,11 +22,11 @@ const QualificationForm = ({ formValues, handleChange }) => {
         <Input type='text' value={formValues.grade} onChange={(event) => handleChange({ type: 'grade', data: event.target.value })} />
       </NameWrapper>
       <NameWrapper>
-        Start Year
+        Start Year *
         <Input type='date' value={formValues.startYear} onChange={(event) => handleChange({ type: 'startYear', data: event.target.value })} />
       </NameWrapper>
       <NameWrapper>
-        End Year
+        End Year *
         <Input type='date' min={formValues.startYear} value={formValues.endYear} onChange={(event) => handleChange({ type: 'endYear', data: event.target.value })} />
       </NameWrapper>
       <NameWrapper>
