@@ -35,6 +35,8 @@ export const StyledButton = styled.button`
       case 'subtle':
       case 'icon':
         return 'transparent';
+      default:
+        return theme.mainDark;
     }
   }};
 
@@ -49,6 +51,8 @@ export const StyledButton = styled.button`
       case 'subtle':
       case 'icon':
         return theme.text;
+      default:
+        return theme.white;
     }
   }};
 
@@ -64,6 +68,10 @@ export const StyledButton = styled.button`
       }
       case 'medium': {
         factor = 1.8;
+        break;
+      }
+      default: {
+        factor = 1.5;
         break;
       }
     }
