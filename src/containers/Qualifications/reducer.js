@@ -7,6 +7,7 @@ const configSlice = createSlice({
   },
   reducers: {
     addQualification(state, action) {
+      action.payload.createdAt = Date.now();
       state.list.push(action.payload);
     },
   },
