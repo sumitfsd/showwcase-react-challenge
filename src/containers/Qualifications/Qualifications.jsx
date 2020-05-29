@@ -1,14 +1,16 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState, useReducer, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Navigation from '../../components/Navigation';
 import Button from '../../components/Button';
 import Modal from '../../components/Modal';
-import { ContentWrapper, Container, ModalFooterActionsWrapper, CancelButton } from './Qualifications.styled'
 import QualificationForm from '../../components/QualificationForm';
 import { initialState, reducer } from '../../components/QualificationForm/reducer'
+import CardList from '../../components/CardList';
+import { ContentWrapper, Container, ModalFooterActionsWrapper, CancelButton, WelcomeMessage } from './Qualifications.styled'
+import { ROUTES } from '../../constant';
 
-function Homepage({ userName, history, addQualification }) {
-  const [showModal, setShowModal] = useState(true);
+function Homepage({ userName, history, addQualification, qualifications, qualificationId }) {
+  const [showModal, setShowModal] = useState(false);
   const [state, dispatch] = useReducer(reducer, initialState)
 
   const handleSave = () => {
@@ -16,7 +18,6 @@ function Homepage({ userName, history, addQualification }) {
     setShowModal(false)
     dispatch({ type: 'reset', data: initialState })
   }
-
   const handleCancel = () => {
     setShowModal(false)
     dispatch({ type: 'reset', data: initialState })
@@ -26,16 +27,20 @@ function Homepage({ userName, history, addQualification }) {
     <Container>
       <Navigation
         history={history}
-        links={[
-
-        ]}
+        links={
+          qualifications.map((data, index) => ({
+            text: data.schoolName,
+            to: `${ROUTES.QUALIFICATIONS}/${index}`
+          }))
+        }
       />
       <ContentWrapper>
-        <>{`Welcome ${userName}`}</>
-        <button onClick={() => setShowModal(true)}>
-          Add new education
-          </button>
-
+        <WelcomeMessage>{`Welcome to ${userName}'s education page`}</WelcomeMessage>
+        <WelcomeMessage>
+          <Button onClick={() => setShowModal(true)} size='medium'>
+            Add new education
+          </Button>
+        </WelcomeMessage>
         <Modal
           hasFixedHeader
           onRequestClose={() => setShowModal(false)}
@@ -59,6 +64,11 @@ function Homepage({ userName, history, addQualification }) {
             handleChange={dispatch}
           />
         </Modal>
+        <CardList
+          list={qualifications}
+          selectedCard={qualificationId}
+          history={history}
+        />
       </ContentWrapper>
     </Container>
   )

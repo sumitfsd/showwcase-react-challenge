@@ -2,7 +2,7 @@ import styled from "styled-components";
 import theme from "../../styles/theme";
 
 export const ContentWrapper = styled.div`
-  background-color: ${theme.grey};
+  background-color: ${theme.white};
   flex: 0.9;
 `
 
@@ -31,8 +31,17 @@ export const CancelButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: ${theme.white};
   padding: calc(${theme.sizingUnit} * 0.45) calc(${theme.sizingUnit} * 1.2);
   font-size: ${theme.spacing(1)};
   margin-right: ${theme.spacing()};
+`
+
+export const WelcomeMessage = styled.div`
+  width: 100%;
+  padding: calc(${theme.sizingUnit} * 1);
+  font-size: calc(${theme.sizingUnit} * 1.2);
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
 `
