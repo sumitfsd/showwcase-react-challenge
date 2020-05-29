@@ -21,7 +21,7 @@ Navigation.propTypes = {
     PropTypes.shape({
       text: PropTypes.string.isRequired,
       to: PropTypes.string.isRequired,
-      icon: PropTypes.any.isRequired
+      icon: PropTypes.any
     })
   ),
   isCollapsed: PropTypes.bool,
@@ -52,9 +52,9 @@ export default function Navigation({ links, isCollapsed, toggleNavigation }) {
               key={i}
               to={to}
             >
-              <IconWrapper>
+              {!!Icon && <IconWrapper>
                 <Icon />
-              </IconWrapper>
+              </IconWrapper>}
               {!isCollapsed && (
                 <LinkText>
                   {text}

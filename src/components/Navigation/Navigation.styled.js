@@ -10,6 +10,7 @@ export const NavigationWrapper = styled.div`
   background-color: ${theme.main};
   transition: width ${toggleSpeed} ${easeOutExponential};
   flex: 0.1;
+  max-width: 12rem;
 `
 
 export const Content = styled.div`
@@ -95,6 +96,8 @@ const link = css`
   &:focus,
   &:active {
     outline: none;
+    background-color: ${theme.mainLight};
+    color: ${theme.mainDark}
   }
 `
 
@@ -112,5 +115,6 @@ export const LinkText = styled.span`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding: calc(${theme.sizingUnit} * 0.5);
   line-height: calc(${theme.sizingUnit} * 2.5);
 `
