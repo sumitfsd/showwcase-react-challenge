@@ -2,32 +2,75 @@ import styled from "styled-components";
 import theme from "../../styles/theme";
 
 export const CardWrapper = styled.div`
-: hover {  
-  box-shadow: 0 calc(${theme.sizingUnit} * 0.5) calc(${theme.sizingUnit} * 1) ${theme.greyDark}, 0 calc(${theme.sizingUnit} * 0.6) calc(${theme.sizingUnit} * 0.6) ${theme.greyDark};
-  margin-bottom: calc(${theme.sizingUnit} * 5.4);
-};
-  height: 25rem;
-  box-shadow: calc(${theme.sizingUnit} * 0.6);
-  background: ${theme.mainDark};
-  margin: 1rem;  
-  box-shadow: 0 calc(${theme.sizingUnit} * 1) calc(${theme.sizingUnit} * 1) 0 rgba(0,0,0,.15);
-  margin: calc(${theme.sizingUnit} * 2);
+  display: inline-block;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.15);
+  margin: calc(${theme.sizingUnit} * 1);
   position: relative;
-  margin-bottom: calc(${theme.sizingUnit} * 5 );
   transition: all .2s ease-in-out;
+  background: ${theme.grey};
+  color: ${theme.text};
+  max-width: calc(${theme.sizingUnit} * 25);
+  min-width: calc(${theme.sizingUnit} * 25);
+
+  &:hover {
+    box-shadow: 0 calc(${theme.sizingUnit} * 0.5) calc(${theme.sizingUnit} * 1) ${theme.greyDark}, 0 calc(${theme.sizingUnit} * 0.6) calc(${theme.sizingUnit} * 0.6) ${theme.greyDark};
+    margin-bottom: calc(${theme.sizingUnit} * 2.4);
+  }
 `
 
 export const CardTitle = styled.div`
-  height: 3rem;
-  background: blue;
+  height: calc(${theme.sizingUnit} * 3);
+  letter-spacing: calc(${theme.sizingUnit} * .1);
+  text-transform: capitalize;
+  text-align: center;
+  padding: calc(${theme.sizingUnit} * .5);
+  background: ${props => props.isSelected ? theme.main : theme.mainLight};
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+export const Overlay = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: ${theme.greyDark};
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+`
+
+export const OverlayContentWrapper = styled.div`
+  display:  flex;
+  flex-direction: column;
+  position: absolute;
+  padding: calc(${theme.sizingUnit} * .5);
+  line-height:  calc(${theme.sizingUnit} * 2);
 `
 
 export const CardContext = styled.div`
+  position: relative;
   display: flex;
+  height: calc(${theme.sizingUnit} * 10);
   flex-direction: column;
-  align-self: center;
-  font-size: 1rem;
-  color: ${theme.white};
-  padding-left: 2rem;
-  padding-top: 1rem;
+  padding: calc(${theme.sizingUnit} * .5);
+  line-height:  calc(${theme.sizingUnit} * 2);
+  max-height: calc(${theme.sizingUnit} * 7);
+  overflow-y: auto;
+  &:hover ${Overlay} {
+    height: 100%;
+  }
 `
+
+export const Text = styled.div`
+  color: ${theme.text};
+  font-size: calc(${theme.sizingUnit} * 1);
+  width: 100%;
+  word-break: break-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`
+
