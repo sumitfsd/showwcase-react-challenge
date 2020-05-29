@@ -12,7 +12,7 @@ Special Libraries used:
 
 The app contains two pages:
   1. First Page contains the following:
-     - A form to take user name. Empty name is not alowed.
+     - A form to take user name. Empty name is not allowed.
      - Navigation bar which can contains multiple links to other pages. Ir currently contains link to homepage which is the same one.
   2. The second page contains the following:
      - A welcome message with user name.
@@ -20,7 +20,7 @@ The app contains two pages:
      - The university list in the form appears only when user atleast types one letter.
      - A qualification list which shows complete user details on hover,minified details otherwise.
      - A navigation bar which contains list of user qualification titles and acts as a bookmark for all the qualifications. 
-     - User can go back to home page by clicking upon SHOWCASEicon in nav bar and change user name.
+     - User can go back to home page by clicking upon SHOWCASE icon in nav bar and change user name.
 
 ## How to run
 
