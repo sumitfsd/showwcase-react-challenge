@@ -7,6 +7,7 @@ import QualificationForm from '../../components/QualificationForm';
 import {
   initialState,
   reducer,
+  FIELDS,
 } from '../../components/QualificationForm/reducer';
 import CardList from '../../components/CardList';
 import { ContentWrapper, Container } from '../Homepage/Homepage.styled';
@@ -29,7 +30,12 @@ function Homepage({
 }) {
   const [showModal, setShowModal] = useState(false);
   const [state, dispatch] = useReducer(reducer, initialState);
-  const requiredField = ['schoolName', 'degree', 'startYear', 'endYear'];
+  const requiredField = [
+    FIELDS.SCHOOL_NAME,
+    FIELDS.DEGREE,
+    FIELDS.START_YEAR,
+    FIELDS.END_YEAR,
+  ];
 
   const handleSave = () => {
     const errors = validate(state, requiredField);
@@ -41,7 +47,7 @@ function Homepage({
       return;
     }
     Toast.fire({
-      title: `Qualification at ${state.schoolName} is saved`,
+      title: `Qualification at ${state[FIELDS.SCHOOL_NAME]} is saved`,
       icon: 'success',
     });
     addQualification(state);
@@ -59,7 +65,7 @@ function Homepage({
         isCollapsed={isCollapsed}
         history={history}
         links={qualifications.map((data, index) => ({
-          text: data.schoolName,
+          text: data[FIELDS.SCHOOL_NAME],
           to: `${ROUTES.QUALIFICATIONS}/${index}`,
         }))}
       />

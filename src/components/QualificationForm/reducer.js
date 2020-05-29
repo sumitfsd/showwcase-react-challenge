@@ -1,3 +1,13 @@
+export const FIELDS = {
+  SCHOOL_NAME: 'schoolName',
+  DEGREE: 'degree',
+  FIELD_OF_STUDY: 'fieldOfStudy',
+  DESCRIPTION: 'description',
+  GRADE: 'grade',
+  START_YEAR: 'startYear',
+  END_YEAR: 'endYear',
+};
+
 export const initialState = {
   schoolName: '',
   degree: '',
@@ -10,19 +20,19 @@ export const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'schoolName':
+    case FIELDS.SCHOOL_NAME:
       return { ...state, schoolName: action.data };
-    case 'degree':
+    case FIELDS.DEGREE:
       return { ...state, degree: action.data };
-    case 'fieldOfStudy':
+    case FIELDS.FIELD_OF_STUDY:
       return { ...state, fieldOfStudy: action.data };
-    case 'grade':
+    case FIELDS.GRADE:
       return { ...state, grade: action.data };
-    case 'startYear':
+    case FIELDS.START_YEAR:
       return { ...state, startYear: action.data };
-    case 'endYear':
+    case FIELDS.END_YEAR:
       return { ...state, endYear: action.data };
-    case 'description':
+    case FIELDS.DESCRIPTION:
       return { ...state, description: action.data };
     case 'reset':
       return { ...state, ...action.data };

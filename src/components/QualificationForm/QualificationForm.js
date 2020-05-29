@@ -8,6 +8,7 @@ import {
   TextArea,
   FormWrapper,
 } from './QualificationForm.styled';
+import { FIELDS } from './reducer';
 
 const QualificationForm = ({ formValues, handleChange }) => {
   return (
@@ -17,7 +18,8 @@ const QualificationForm = ({ formValues, handleChange }) => {
         <Select
           styles={CustomStyle}
           onChange={(value) =>
-            handleChange({ type: 'schoolName', data: value })}
+            handleChange({ type: FIELDS.SCHOOL_NAME, data: value })
+          }
         />
       </NameWrapper>
       <NameWrapper>
@@ -27,7 +29,8 @@ const QualificationForm = ({ formValues, handleChange }) => {
           value={formValues.degree}
           placeholder="Enter degree"
           onChange={(event) =>
-            handleChange({ type: 'degree', data: event.target.value })}
+            handleChange({ type: FIELDS.DEGREE, data: event.target.value })
+          }
         />
       </NameWrapper>
       <NameWrapper>
@@ -36,7 +39,11 @@ const QualificationForm = ({ formValues, handleChange }) => {
           type="text"
           value={formValues.fieldOfStudy}
           onChange={(event) =>
-            handleChange({ type: 'fieldOfStudy', data: event.target.value })}
+            handleChange({
+              type: FIELDS.FIELD_OF_STUDY,
+              data: event.target.value,
+            })
+          }
         />
       </NameWrapper>
       <NameWrapper>
@@ -45,7 +52,8 @@ const QualificationForm = ({ formValues, handleChange }) => {
           type="text"
           value={formValues.grade}
           onChange={(event) =>
-            handleChange({ type: 'grade', data: event.target.value })}
+            handleChange({ type: FIELDS.GRADE, data: event.target.value })
+          }
         />
       </NameWrapper>
       <NameWrapper>
@@ -54,7 +62,8 @@ const QualificationForm = ({ formValues, handleChange }) => {
           type="date"
           value={formValues.startYear}
           onChange={(event) =>
-            handleChange({ type: 'startYear', data: event.target.value })}
+            handleChange({ type: FIELDS.START_YEAR, data: event.target.value })
+          }
         />
       </NameWrapper>
       <NameWrapper>
@@ -64,7 +73,8 @@ const QualificationForm = ({ formValues, handleChange }) => {
           min={formValues.startYear}
           value={formValues.endYear}
           onChange={(event) =>
-            handleChange({ type: 'endYear', data: event.target.value })}
+            handleChange({ type: FIELDS.END_YEAR, data: event.target.value })
+          }
         />
       </NameWrapper>
       <NameWrapper>
@@ -73,7 +83,8 @@ const QualificationForm = ({ formValues, handleChange }) => {
           rows={4}
           value={formValues.description}
           onChange={(event) =>
-            handleChange({ type: 'description', data: event.target.value })}
+            handleChange({ type: FIELDS.DESCRIPTION, data: event.target.value })
+          }
         />
       </NameWrapper>
     </FormWrapper>
